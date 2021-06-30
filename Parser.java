@@ -11,7 +11,7 @@ public class Parser {
     private File asmFile;
     private Scanner reader;
     
-    private String currentLine;
+    public String currentLine;
 
     public Parser(String filePath) {
 
@@ -46,8 +46,11 @@ public class Parser {
 
     public void advance() {
 
-        while (this.hasMoreCommands() && !this.isValidCommand(this.currentLine))
+        if (this.hasMoreCommands())
             this.currentLine = this.reader.nextLine().trim();
+
+        if (!this.isValidCommand(this.currentLine))
+            advance();
     }
 
     public int commandType() {

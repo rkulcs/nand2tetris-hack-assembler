@@ -3,8 +3,6 @@ public class Code {
     public static String dest(String mnemonic) {
 
         switch (mnemonic) {
-            case "":
-                return "000";
             case "M":
                 return "001";
             case "D":
@@ -20,7 +18,7 @@ public class Code {
             case "AMD":
                 return "111";
             default:
-                return null;
+                return "000";
         }
     }
 
@@ -91,8 +89,6 @@ public class Code {
     public static String jump(String mnemonic) {
 
         switch (mnemonic) {
-            case "":
-                return "000";
             case "JGT":
                 return "001";
             case "JEQ":
@@ -108,7 +104,7 @@ public class Code {
             case "JMP":
                 return "111";
             default:
-                return null;
+                return "000";
         }
     }
 
